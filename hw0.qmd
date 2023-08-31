@@ -1,0 +1,45 @@
+---
+title: "HW0"
+author: "Yiran Fu"
+date: "8/29/2023"
+format: html
+execute:
+  echo: false
+---
+
+## Code
+
+The solution(s) of the equation:
+
+```{r}
+solve_equation <- function(a, b, c)
+  {
+  #check if there's real solution
+  if(b^2 - 4*a*c < 0){
+    #if no real solutions, return null
+    return (NULL) }
+  solution <- c((-b + sqrt(b^2 - 4*a*c)) / (2*a), (-b - sqrt(b^2 - 4*a*c)) / (2*a))
+  #check if two solutions are the same
+  if (solution[1] == solution[2]){
+    return(solution[1]) } 
+  return(solution)
+}
+a<-1
+b<-3
+c<-2
+solve_equation(a,b,c)
+```
+
+## Plot
+
+```{r}
+
+x<-seq(-5, 5, 0.1)
+plot(x, a*x^2 + b*x + c, type = "l")
+abline(h = 0, lty = 2)
+```
+
+The result shown in the plot matches the solution above. 
+When a=1, b=3, c=2, from the plot we could see there are two intersections at x=-1 and -2, which means the equation has two real solutions
+
+
