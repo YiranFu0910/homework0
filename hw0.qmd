@@ -9,13 +9,13 @@ execute:
 
 ## Code
 
-The solution(s) of the equation:
+The real solution(s) of the equation ax^2+bx+c=0:
 
 ```{r}
 solve_equation <- function(a, b, c)
   {
   #check if there's real solution
-  if(b^2 - 4*a*c < 0){
+  if(b^2-4*a*c < 0){
     #if no real solutions, return null
     return (NULL) }
   solution <- c((-b + sqrt(b^2 - 4*a*c)) / (2*a), (-b - sqrt(b^2 - 4*a*c)) / (2*a))
@@ -27,6 +27,7 @@ solve_equation <- function(a, b, c)
 a<-1
 b<-3
 c<-2
+cat("When a =",a,", b =",b,", c =",c,":")
 solve_equation(a,b,c)
 ```
 
@@ -40,6 +41,6 @@ abline(h = 0, lty = 2)
 ```
 
 The result shown in the plot matches the solution above. 
-When a=1, b=3, c=2, from the plot we could see there are two intersections at x=-1 and -2, which means the equation has two real solutions
+When a=1, b=3, c=2, from the plot we could see there are two intersections at x=-1 and x=-2, which means the equation has two real solutions at x=-1 and x=-2.
 
 
